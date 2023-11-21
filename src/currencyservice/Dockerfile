@@ -48,4 +48,5 @@ RUN apk add grpc-dev re2-dev protobuf-dev c-ares-dev
 COPY --from=builder /usr/local/bin/currencyservice ./
 
 EXPOSE ${CURRENCY_SERVICE_PORT}
+USER non-root
 ENTRYPOINT ./currencyservice ${CURRENCY_SERVICE_PORT}
